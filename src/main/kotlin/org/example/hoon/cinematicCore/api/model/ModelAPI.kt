@@ -5,6 +5,7 @@ import org.bukkit.World
 import org.bukkit.entity.Entity
 import org.bukkit.entity.LivingEntity
 import org.bukkit.plugin.Plugin
+import org.bukkit.plugin.java.JavaPlugin
 import org.example.hoon.cinematicCore.CinematicCore
 import org.example.hoon.cinematicCore.model.domain.BlockbenchModel
 import org.example.hoon.cinematicCore.model.domain.getBone
@@ -19,7 +20,26 @@ import java.util.UUID
  * 모델 관련 기능을 제공하는 API 클래스
  */
 object ModelAPI {
-    private val plugin: Plugin = CinematicCore.instance
+    /**
+     * 플러그인 인스턴스를 가져옵니다.
+     * CinematicCore가 플러그인으로 설치되어 있으면 그것을 사용하고,
+     * 라이브러리로 사용 중이면 이 클래스를 로드한 플러그인을 사용합니다.
+     */
+    private val plugin: Plugin
+        get() {
+            // CinematicCore가 플러그인으로 설치되어 있으면 사용
+            return try {
+                CinematicCore.instance
+            } catch (e: UninitializedPropertyAccessException) {
+                // CinematicCore가 초기화되지 않았으면 라이브러리로 사용 중
+                // 이 클래스를 로드한 플러그인 사용
+                try {
+                    JavaPlugin.getProvidingPlugin(ModelAPI::class.java)
+                } catch (e2: IllegalStateException) {
+                    throw IllegalStateException("CinematicCore API를 사용하려면 플러그인 컨텍스트가 필요합니다. JavaPlugin.getProvidingPlugin()이 실패했습니다.", e2)
+                }
+            }
+        }
     
     /**
      * 엔티티에 모델을 적용합니다
