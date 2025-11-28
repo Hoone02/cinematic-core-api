@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CinematicCore:jar">
+    <output-path>$PROJECT_DIR$/../../../마인크래프트/서버/21.8 - 개발서버/plugins</output-path>
+    <root id="archive" name="CinematicCore.jar">
+      <element id="module-output" name="CinematicCore" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.3.0-Beta2/kotlin-stdlib-2.3.0-Beta2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.3.0-Beta2/kotlin-stdlib-jdk8-2.3.0-Beta2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/2.3.0-Beta2/kotlin-stdlib-jdk7-2.3.0-Beta2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,25 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/ender_pearl"
+    },
+    "cases": [
+      {
+        "when": "camcorder",
+        "model": {
+          "type": "model",
+          "model": "cinematiccore:camcorder/camcorder",
+          "tints": [
+            {
+              "type": "minecraft:dye",
+              "default": -1
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+name: CinematicCore
+version: '1.0-SNAPSHOT'
+main: org.example.hoon.cinematicCore.CinematicCore
+api-version: '1.21'
+
+commands:
+  test:
+    description: Test command to mount player on Marker
+    usage: /<command>
+  cinematiccore:
+    description: CinematicCore 플러그인 메인 명령어
+    usage: /<command> reload
+    aliases: [cc]
