@@ -42,11 +42,11 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.github.Hoone02"
-            artifactId = "CinematicCore"
+            artifactId = "cinematic-core-api"  // 저장소 이름과 일치
             version = project.version.toString()
 
             from(components["java"])
-            
+
             // 소스 JAR 포함
             artifact(tasks["sourcesJar"])
             // Javadoc JAR 포함
